@@ -21,21 +21,7 @@ This project is a fully automated backup tool written in Bash. It safely backs u
 ---
 
 ##  Project Structure
-automated-backup-system/
-│
-├── backup.sh                 # Main backup script
-├── config/                   
-│   └── backup.conf           # Configuration file (source, destination paths)
-│
-├── logs/
-│   └── backup.log            # Log file for backup status
-│
-├── backups/                  # Folder to store backup archives (if local backup)
-│   └── (auto-generated .tar.gz files)
-│
-├── README.md                 # Documentation
-│
-└── .gitignore                # Ignore unnecessary files like logs and backups
+
 
 
 
