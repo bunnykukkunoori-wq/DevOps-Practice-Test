@@ -66,7 +66,7 @@ MONTHLY_KEEP=3
 CHECKSUM_CMD=sha256sum
 ```
 
-### 3️⃣ Dry Run (Test Mode)
+### Dry Run (Test Mode)
 
 Simulate what the script will do, without actually creating files:
 
@@ -112,9 +112,9 @@ ls -lh backups/
 
 ---
 
-## 🔄 How It Works
+##  How It Works
 
-### 🔹 Backup Creation
+###  Backup Creation
 
 * The script uses the `tar` command to compress files into `.tar.gz`.
 * Excluded patterns (like `.git` or `node_modules`) are skipped.
@@ -134,14 +134,14 @@ sha256sum backup-2025-11-03-1430.tar.gz > backup-2025-11-03-1430.tar.gz.sha256
 
 Then verifies it to ensure data integrity.
 
-### 🔹 Backup Retention Policy
+###  Backup Retention Policy
 
 Old backups are automatically deleted:
 
 * Keep **7 daily**, **4 weekly**, and **3 monthly** backups.
 * The script lists files by date and removes older ones beyond the retention limits.
 
-### 🔹 Lock Mechanism
+###  Lock Mechanism
 
 Prevents accidental double runs using:
 
@@ -163,7 +163,7 @@ Prevents accidental double runs using:
 
 ---
 
-## 🧪 Testing Examples
+##  Testing Examples
 
 1. **Test Backup Creation**
 
@@ -225,7 +225,7 @@ Prevents accidental double runs using:
 ##  Author
 
 **bunny kukkunoori**
-DevOps & Bash Automation Enthusiast 🚀
+DevOps & Bash Automation Enthusiast 
 GitHub: [https://github.com/bunnykukkunoori](https://github.com/bunnykukkunoori)
 
 ---
