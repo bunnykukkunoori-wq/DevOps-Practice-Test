@@ -230,7 +230,4 @@ GitHub: [https://github.com/bunnykukkunoori](https://github.com/bunnykukkunoori)
 
 ---
 
-##  Tip
 
-> Start small, test often, and commit to GitHub frequently.
-> Simple, working automation is better than complex, broken code.
