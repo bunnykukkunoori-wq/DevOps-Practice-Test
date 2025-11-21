@@ -32,11 +32,29 @@ Think of it as a smarter “copy and paste” that also cleans up after itself!
 ## Project Structure
 
 ```
-backup-system/
-├── backup.sh              ← Main Bash script
-├── backup.config          ← Configuration file
-├── backups/               ← Where backups are stored
-└── README.md              ← Documentation (this file)
+automated-backup-system/
+├── backup.sh                      # Main backup automation script
+├── backup.config                  # Configuration file (source, destination, retention)
+│
+├── backups/                       # Auto-generated backup archives
+│   ├── backup-2025-11-21.tar.gz
+│   └── ...
+│
+├── logs/                          # Log files
+│   ├── backup.log                 # Full history of backups
+│   └── error.log                  # Critical errors
+│
+├── screenshots/                   # Screenshots for documentation
+│   ├── backup-success.png
+│   └── folder-structure.png
+│
+├── tests/
+│   ├── test_backup.sh             # Test script for backup process
+│   └── test_config.sh             # Tests configuration behavior
+│
+├── .gitignore
+└── README.md
+
 ```
 
 ---
