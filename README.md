@@ -2,7 +2,7 @@
 
 Basic backup automation script.
 
-## What You Will Build
+# What You Will Build
 
 ● The system is designed to safely back up files, organize archives, maintain
 
@@ -68,7 +68,7 @@ These logs help track backup history, troubleshoot issues, and verify success.
 
 ● Logs the cleanup process.
 
-T● his prevents unnecessary storage usage.
+● This prevents unnecessary storage usage.
 
 ### A Safe Dry Run Mode
 
@@ -101,19 +101,89 @@ Think of it as a smarter “copy and paste” that also cleans up after itself!
 
 ● Create timestamped compressed backups.
  
- Verify backup integrity (checksum validation).
+● Verify backup integrity (checksum validation).
  
- Automatically delete old backups based on retention rules.
+● Automatically delete old backups based on retention rules.
  
- Configurable backup destination and exclusions.
+● Configurable backup destination and exclusions.
  
- Lock mechanism to prevent multiple simultaneous runs.
+● Lock mechanism to prevent multiple simultaneous runs.
  
- Dry-run mode (safe simulation).
+● Dry-run mode (safe simulation).
  
- Simple configuration via `backup.config`.
+● Simple configuration via `backup.config`.
 
----
+# A. What Your Script Must Do:
+
+● Load Configuration.
+
+● Validate Required Paths.
+
+● Generate a Timestamped Backup Name.
+
+● Create a Compressed Backup Archive.
+
+● Log All Backup Activity.
+
+# B.Logging
+
+## Log File Structure
+
+```
+logs/
+├── backup.log
+└── error.log
+```
+
+## 1. backup.log (Activity Log)
+
+● This file stores a detailed history of all backup operations, including:
+
+● When the backup started.
+
+● Which file was created.
+
+● Timestamp of the archive.
+
+● Retention cleanup actions.
+
+● Successful operations.
+
+● Warnings
+
+# 2. error.log (Error Log)
+
+● This file captures only errors, including:
+
+● Missing or invalid directories.
+
+● Permission issues.
+
+● Failure to create backup.
+
+● Failed retention cleanup.
+
+● Tar/compression errors.
+
+# C.Prevent Multiple Runs
+
+● To avoid conflicts, corrupted backups, or high system load, the backup 
+
+script must ensure that only one instance runs at a time.
+
+## This prevents problems such as:
+
+● Two backups running simultaneously
+
+● Cron jobs overlapping
+
+● File locks during compression
+
+● Duplicate log entries
+
+● Incomplete or corrupted backups
+
+# 1.Your Code
 
 ## Project Structure
 
@@ -145,7 +215,9 @@ automated-backup-system/
 
 ---
 
-### Project Overview
+# 2.README.md Must Includes
+
+## A. Project Overview
 
 ● The Automatic Backup File System is a lightweight, configurable, and fully
 
@@ -163,7 +235,7 @@ intervention.
 
 developers, or anyone who needs a simple yet powerful backup mechanism.
 
-# How to Use It:
+# B. How to Use It:
 
 ### 1️.Clone the Project
 
@@ -223,7 +295,7 @@ RETENTION_DAYS
 
 ● You do not need to do anything — cleanup happens automatically.
 
-#  How It Works:
+# C. How It Works:
 
 ### 1.Backup Creation:
 
@@ -262,7 +334,7 @@ Prevents accidental double runs using:
 
 ---
 
-# Design Decisions:
+# D. Design Decisions:
 
 ###  Design Decisions
 
@@ -355,13 +427,6 @@ ERROR_LOG="./logs/error.log"
 
 RETENTION_DAYS=7
 
-# Logging:
-
-### All backup events are recorded in:
-
-● logs/backup.log
-
-● logs/error.log
 
 # Screenshots:
 
@@ -371,7 +436,7 @@ RETENTION_DAYS=7
 
 ● folder-structure.png – Folder layout preview
 
-# Testing:
+# E. Testing:
 
 ### Run test scripts:
 
@@ -379,7 +444,7 @@ RETENTION_DAYS=7
 
 ● bash tests/test_config.sh
 
-### Known Limitations:
+# F. Known Limitations:
 
 #### 1. No Incremental or Differential Backups
 
@@ -447,7 +512,7 @@ RETENTION_DAYS=7
 
 ● Low disk space.
 
-# Examples You Must Show:
+# 3.Examples You Must Show:
 
 ## Creating a Backup
 
