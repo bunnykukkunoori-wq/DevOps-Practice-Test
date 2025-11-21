@@ -2,12 +2,6 @@
 
 ● The Automated Backup File System is a simple tool that automatically creates backups of your important files and folders. It saves each backup with the date and time, so you always know when it was made. The system also removes old backups after a certain number of days to keep your storage clean.
 
-# What You Will Build
-
-● The system is designed to safely back up files, organize archives, maintain
-
-logs, and clean up old backups without requiring manual intervention.
-
 # A Complete Automated Backup Script
 
 ## A Bash script (backup.sh) that:
@@ -85,26 +79,85 @@ without making changes.
 
 ● crontab -e
 
-
-It allows you to:
-
-* Automatically create compressed `.tar.gz` backups of any folder
-* Verify integrity using **SHA256 checksum**
-* Manage and delete old backups intelligently
-* Configure everything through a simple config file
-* Test behavior safely with **dry run mode**
-* 
 # A. What Your Script Must Do:
 
-● Load Configuration.
+## Create Backups:
 
-● Validate Required Paths.
+### 1️.Make the Script Executable
 
-● Generate a Timestamped Backup Name.
+```
+chmod +x backup.sh
+```
 
-● Create a Compressed Backup Archive.
+### 2.Create a Backup Manually
 
-● Log All Backup Activity.
+```
+./backup.sh
+```
+
+● When you run this, the script will:
+
+● Validate the source folder.
+
+● Generate a timestamped filename.
+
+● Create a .tar.gz backup archive.
+
+● Save it inside the backups/ folder.
+
+● Log the result in logs/backup.log.
+
+## Delete Old Backups:
+
+### 1.Set Retention Days in backup.config
+
+● In your configuration file, set how many days you want to keep backups:
+
+```
+RETENTION_DAYS=7
+```
+
+### 2.Folder Structure After Retention
+
+```
+backups/
+├── backup-2025-11-20-1100.tar.gz
+└── backup-2025-11-21-1420.tar.gz
+```
+
+## Check If Backups Are Good(Vreification):
+
+### 1.List the Contents of a Backup File
+
+● This checks whether the .tar.gz archive is readable and not corrupted:
+
+```
+tar -tzf backups/backup-YYYY-MM-DD-HHMM.tar.gz
+```
+
+### 2.Test Extract the Backup (Without Extracting Files)
+
+● Use the -W flag to check_tar integrity:
+
+```
+tar -tzf backups/backup-YYYY-MM-DD-HHMM.tar.gz > /dev/null
+```
+
+No output = GOOD
+
+Error message = BAD backup
+
+### 3.Verify Backup File Size
+
+● A zero-byte or very small backup file usually means something went wrong:
+
+```
+ls -lh backups/
+```
+
+● Reasonable file size
+
+● Consistency across multiple backups
 
 # B.Logging
 
