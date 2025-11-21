@@ -1,10 +1,10 @@
-# Backup System
+# Automated Backup System
+
 Basic backup automation script.
-# Smart Backup Tool (Bash Project)
 
 ## What You Will Build
 
-The system is designed to safely back up files, organize archives, maintain
+● The system is designed to safely back up files, organize archives, maintain
 
 logs, and clean up old backups without requiring manual intervention.
 
@@ -98,7 +98,7 @@ Think of it as a smarter “copy and paste” that also cleans up after itself!
 
 ##  Features
 
- Create timestamped compressed backups.
+● Create timestamped compressed backups.
  
  Verify backup integrity (checksum validation).
  
@@ -198,6 +198,7 @@ backups/
 ├── backup-2025-11-21.tar.gz
 ├── backup-2025-11-22.tar.gz
 └── ...
+
 
 
 ● Each file is automatically timestamped for easy sorting and tracking.
@@ -585,21 +586,7 @@ Or run manually:
 
 ##  Example Log Output Screenshot:
 
-## 📸 Screenshot
-
-![Backup Screenshot](screenshots/screenshot-16.png)
-
-
-
-
-```
-[2025-11-03 14:30:15] INFO: Starting backup of /home/user/documents
-[2025-11-03 14:30:45] SUCCESS: Backup created: backup-2025-11-03-1430.tar.gz
-[2025-11-03 14:30:46] INFO: Checksum verified successfully
-[2025-11-03 14:30:50] INFO: Deleted old backup: backup-2025-10-05-0900.tar.gz
-```
-
----
+![Backup Screenshot](screenshots/bunny.png)
 
 ##  Author
 
