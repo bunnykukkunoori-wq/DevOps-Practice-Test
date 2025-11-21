@@ -587,7 +587,8 @@ Or run manually:
 
 ## 📸 Screenshot
 
-![Backup Screenshot](screenshots/backup-preview.png)
+![Backup Success](screenshots/backup-success.png)
+
 
 
 ```
