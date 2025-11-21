@@ -2,6 +2,22 @@
 
 ● The Automated Backup File System is a simple tool that automatically creates backups of your important files and folders. It saves each backup with the date and time, so you always know when it was made. The system also removes old backups after a certain number of days to keep your storage clean.
 
+# Why It Is Usefull:
+
+● Prevents Data Loss.
+
+● Fully Automatic.
+
+● Easy to Configure.
+
+● Saves Storage Space.
+
+● Clear Logging.
+
+● Lightweight & Fast.
+
+● Reliable for Daily Use.
+
 # A Complete Automated Backup System
 
 ## A Bash script (backup.sh) that:
