@@ -2,7 +2,7 @@
 
 ● The Automated Backup File System is a simple tool that automatically creates backups of your important files and folders. It saves each backup with the date and time, so you always know when it was made. The system also removes old backups after a certain number of days to keep your storage clean.
 
-# A Complete Automated Backup Script
+# A Complete Automated Backup System
 
 ## A Bash script (backup.sh) that:
 
@@ -143,9 +143,9 @@ tar -tzf backups/backup-YYYY-MM-DD-HHMM.tar.gz
 tar -tzf backups/backup-YYYY-MM-DD-HHMM.tar.gz > /dev/null
 ```
 
-No output = GOOD
+● No output = GOOD
 
-Error message = BAD backup
+● Error message = BAD backup
 
 ### 3.Verify Backup File Size
 
