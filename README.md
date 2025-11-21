@@ -522,14 +522,6 @@ RETENTION_DAYS=7
 
 ● ./backup.sh
 
-
-### Example output:
-
-✔ Backup process started...
-✔ Created archive: backup-2025-11-21-1420.tar.gz
-✔ Backup successfully completed.
-
-
 A compressed .tar.gz file will be created inside the backups/ directory.
 
 Example:
