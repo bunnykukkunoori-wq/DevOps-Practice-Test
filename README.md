@@ -59,6 +59,32 @@ automated-backup-system/
 
 ---
 
+### Logging:
+
+#### All backup events are recorded in:
+
+● logs/backup.log
+
+● logs/error.log
+
+### Screenshots:
+
+#### Below screenshots are included inside the screenshots/ folder:
+
+● backup-success.png – Example terminal output
+
+● folder-structure.png – Folder layout preview
+
+### Testing:
+
+#### Run test scripts:
+
+✔ bash tests/test_backup.sh
+
+✔ bash tests/test_config.sh
+
+
+
 ## How to Use
 
 ### Installation
@@ -242,9 +268,13 @@ Prevents accidental double runs using:
 
 ##  Author
 
-**bunny kukkunoori**
-DevOps & Bash Automation Enthusiast 
-GitHub: [https://github.com/bunnykukkunoori](https://github.com/bunnykukkunoori)
+Bunny Kukkunoori
+
+Developer & Automation Engineer
+
+Email: bunnykukkunoori@gmail.com
+
+GitHub: bunnykukkunoori-wq
 
 ---
 
