@@ -583,7 +583,12 @@ Or run manually:
 
 ---
 
-##  Example Log Output
+##  Example Log Output Screenshot:
+
+## 📸 Screenshot
+
+![Backup Screenshot](screenshots/backup-preview.png)
+
 
 ```
 [2025-11-03 14:30:15] INFO: Starting backup of /home/user/documents
