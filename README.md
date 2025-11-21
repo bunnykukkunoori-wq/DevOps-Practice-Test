@@ -50,10 +50,11 @@ Each backup is clearly named and easy to restore.
 
 ● A detailed logging mechanism that generates:
 
+```
 logs/
 ├── backup.log
 └── error.log
-
+```
 
 These logs help track backup history, troubleshoot issues, and verify success.
 
@@ -194,12 +195,12 @@ Check Your Backups
 
 Your backup files will be stored here:
 
+```
 backups/
 ├── backup-2025-11-21.tar.gz
 ├── backup-2025-11-22.tar.gz
 └── ...
-
-
+```
 
 ● Each file is automatically timestamped for easy sorting and tracking.
 
@@ -207,9 +208,12 @@ backups/
 
 ## Log files are stored under:
 
+```
 logs/
 ├── backup.log
 └── error.log
+```
+
 
 # 8️.Clean Old Backups (Automatic)
 
