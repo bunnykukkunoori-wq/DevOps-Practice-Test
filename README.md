@@ -163,35 +163,35 @@ intervention.
 
 developers, or anyone who needs a simple yet powerful backup mechanism.
 
-### How to Use It:
+# How to Use It:
 
-# 1️.Clone the Project
+### 1️.Clone the Project
 
 ● git clone https://github.com/your-username/automated-backup-system.git
 
 cd automated-backup-system
 
-# 2.Update the Configuration File
+### 2.Update the Configuration File
 
-## Open backup.config and set your desired values:
+#### Open backup.config and set your desired values:
 
 ● nano backup.config
 
-# 3.Make the Script Executable
+### 3.Make the Script Executable
 
 ● chmod +x backup.sh
 
-# 4️.Run the Backup Manually
+### 4️.Run the Backup Manually
 
 ● ./backup.sh
 
-# 5️.Automate Backups with Cron (Recommended)
+### 5️.Automate Backups with Cron (Recommended)
 
-## Open the cron editor:
+#### Open the cron editor:
 
 ● crontab -e
 
-Check Your Backups
+### 6.Check Your Backups
 
 Your backup files will be stored here:
 
@@ -204,9 +204,9 @@ backups/
 
 ● Each file is automatically timestamped for easy sorting and tracking.
 
-# 7️.View Logs
+### 7️.View Logs
 
-## Log files are stored under:
+#### Log files are stored under:
 
 ```
 logs/
@@ -215,7 +215,7 @@ logs/
 ```
 
 
-# 8️.Clean Old Backups (Automatic)
+### 8️.Clean Old Backups (Automatic)
 
 ● The script deletes backups older than the number of days set in 
 
@@ -223,9 +223,9 @@ RETENTION_DAYS
 
 ● You do not need to do anything — cleanup happens automatically.
 
-##  How It Works:
+#  How It Works:
 
-###  Backup Creation:
+### 1.Backup Creation:
 
 * The script uses the `tar` command to compress files into `.tar.gz`.
 * Excluded patterns (like `.git` or `node_modules`) are skipped.
@@ -235,7 +235,7 @@ RETENTION_DAYS
   backup-2025-11-03-1430.tar.gz
   ```
 
-###  Checksum Verification:
+###  2.Checksum Verification:
 
 After creation, the script generates a SHA256 checksum:
 
@@ -245,14 +245,14 @@ sha256sum backup-2025-11-03-1430.tar.gz > backup-2025-11-03-1430.tar.gz.sha256
 
 Then verifies it to ensure data integrity.
 
-###  Backup Retention Policy:
+###  3.Backup Retention Policy:
 
 Old backups are automatically deleted:
 
 * Keep **7 daily**, **4 weekly**, and **3 monthly** backups.
 * The script lists files by date and removes older ones beyond the retention limits.
 
-###  Lock Mechanism:
+###  4.Lock Mechanism:
 
 Prevents accidental double runs using:
 
@@ -262,9 +262,9 @@ Prevents accidental double runs using:
 
 ---
 
-### Design Decisions:
+# Design Decisions:
 
-##  Design Decisions
+###  Design Decisions
 
 | Feature          | Reason                                          |
 | ---------------- | ----------------------------------------------- |
@@ -275,9 +275,9 @@ Prevents accidental double runs using:
 | Lock file        | Avoids corrupted or overlapping backups         |
 
 
-# 1. Modular Project Structure
+### 1. Modular Project Structure
 
-## The system is separated into:
+#### The system is separated into:
 
 ● backup.sh → Core script with backup logic
 
@@ -287,15 +287,15 @@ Prevents accidental double runs using:
 
 ● logs/ → (Optional) To store backup logs
 
-# 2. Configuration-Driven Workflow
+### 2. Configuration-Driven Workflow
 
 ● All dynamic values (backup paths, filename patterns, retention days, 
 
 exclusion rules) are stored in backup.config.
 
-# 3. Use of Standard Linux Tools
+### 3. Use of Standard Linux Tools
 
-### The script uses widely available Unix tools such as:
+#### The script uses widely available Unix tools such as:
 
 ● tar → archive creation
 
@@ -307,15 +307,15 @@ exclusion rules) are stored in backup.config.
 
 ● date → timestamp generation
 
-# 4. Timestamp-Based Backup Files
+### 4. Timestamp-Based Backup Files
 
-## Backup filenames use the pattern:
+#### Backup filenames use the pattern:
 
 ● backup-yyyy-mm-dd_HH-MM-SS.tar.gz
 
-# 5. Logging & Error Handling
+### 5. Logging & Error Handling
 
-## The system logs:
+#### The system logs:
 
 ● Backup start and end time
 
@@ -325,55 +325,55 @@ exclusion rules) are stored in backup.config.
 
 ● Total archive size
 
-# 6. Retention Policy (Automatic Cleanup)
+### 6. Retention Policy (Automatic Cleanup)
 
 ● Old backups are deleted based on a retention period defined in the config.
 
 
 
-### Configuration — backup.config:
+# Configuration — backup.config:
 
-#### All settings can be configured in the backup.config file.
+### All settings can be configured in the backup.config file.
 
 Example:
 
-# Directory to back up
+### Directory to back up
 
 SOURCE_DIR="/path/to/source"
 
-# Backup output directory
+### Backup output directory
 
 DEST_DIR="./backups"
 
-# Logging
+### Logging
 
 LOG_FILE="./logs/backup.log"
 
 ERROR_LOG="./logs/error.log"
 
-# Days to retain old backups
+### Days to retain old backups
 
 RETENTION_DAYS=7
 
-### Logging:
+# Logging:
 
-#### All backup events are recorded in:
+### All backup events are recorded in:
 
 ● logs/backup.log
 
 ● logs/error.log
 
-### Screenshots:
+# Screenshots:
 
-#### Below screenshots are included inside the screenshots/ folder:
+### Below screenshots are included inside the screenshots/ folder:
 
 ● backup-success.png – Example terminal output
 
 ● folder-structure.png – Folder layout preview
 
-### Testing:
+# Testing:
 
-#### Run test scripts:
+### Run test scripts:
 
 ● bash tests/test_backup.sh
 
@@ -381,19 +381,19 @@ RETENTION_DAYS=7
 
 ### Known Limitations:
 
-# 1. No Incremental or Differential Backups
+#### 1. No Incremental or Differential Backups
 
 ● The system creates full backups only, which can be slower and consume more storage for very large directories.
 
 ● Incremental backups (like rsync-based) are not currently implemented.
 
-# 2. No Built-in Encryption
+#### 2. No Built-in Encryption
 
 ● Backup archives are not encrypted.
 
 ● If encryption is needed, external tools such as gpg or openssl must be added manually.
 
-# 3. Limited Error Recovery
+#### 3. Limited Error Recovery
 
 ● The script logs errors but cannot automatically recover from:
 
@@ -405,7 +405,7 @@ RETENTION_DAYS=7
 
 ● Interrupted backup processes.
 
-# 4. Designed Primarily for Linux/macOS
+#### 4. Designed Primarily for Linux/macOS
 
 ● Windows is not natively supported unless using:
 
@@ -415,7 +415,7 @@ RETENTION_DAYS=7
 
 ● Cygwin.
 
-# 5. Retention Policy Is Time-Based Only
+#### 5. Retention Policy Is Time-Based Only
 
 ● Old backups are deleted based on the number of days.
 
@@ -427,7 +427,7 @@ RETENTION_DAYS=7
 
 ● Smart cleanup logic.
 
-# 6. No Backup Verification Step
+#### 6. No Backup Verification Step
 
 ● After compression, the system does not:
 
@@ -437,7 +437,7 @@ RETENTION_DAYS=7
 
 ● Validate restore compatibility.
 
-# 7. No Email or Alert Notifications
+#### 7. No Email or Alert Notifications
 
 ● The script does not currently send email or system alerts on:
 
@@ -447,14 +447,16 @@ RETENTION_DAYS=7
 
 ● Low disk space.
 
-### Creating a Backup
+# Examples You Must Show:
+
+## Creating a Backup
 
 The Automatic Backup File System makes it simple to manually create a backup or run it automatically using a scheduler.
 Follow the steps below to generate a backup safely and efficiently.
 
-# 1️.Ensure Configuration Is Set Correctly
+### 1️.Ensure Configuration Is Set Correctly
 
-## Before creating a backup, verify the settings in backup.config:
+#### Before creating a backup, verify the settings in backup.config:
 
 SOURCE_DIR="/path/to/source"
 DEST_DIR="./backups"
@@ -462,20 +464,20 @@ LOG_FILE="./logs/backup.log"
 ERROR_LOG="./logs/error.log"
 RETENTION_DAYS=7
 
-# 2️.Make the Script Executable
+### 2️.Make the Script Executable
 
-## Run this once:
+#### Run this once:
 
 ● chmod +x backup.sh
 
-# 3️.Run the Backup Manually
+### 3️.Run the Backup Manually
 
-## Use the command:
+#### Use the command:
 
 ● ./backup.sh
 
 
-Example output:
+### Example output:
 
 ✔ Backup process started...
 ✔ Created archive: backup-2025-11-21-1420.tar.gz
@@ -489,9 +491,9 @@ Example:
 backups/
 └── backup-2025-11-21-1420.tar.gz
 
-# 4️.Verify Logs
+### 4️.Verify Logs
 
-## Check the backup history:
+#### Check the backup history:
 
 ● cat logs/backup.log
 
@@ -505,11 +507,11 @@ You will see entries such as:
 
 [2025-11-21 14:20:01] Backup created: backup-2025-11-21-1420.tar.gz
 
-# 5️.Scheduled Backups (Optional)
+### 5️.Scheduled Backups (Optional)
 
 ● To automate daily backups, use cron.
 
-## Open cron editor:
+#### Open cron editor:
 
 ● crontab -e
 
@@ -518,13 +520,13 @@ Run backup daily at 2 AM:
 
 0 2 * * * /path/to/backup.sh
 
-# 6️.Restoring from a Backup
+### 6️.Restoring from a Backup
 
-## To restore files:
+#### To restore files:
 
 ● tar -xzf backups/backup-2025-11-21-1420.tar.gz -C /restore/location.
 
-### Dry Run Mode
+## Dry Run Mode
 
 ● The Dry Run Mode allows you to simulate the backup proces without actually
 
@@ -538,9 +540,9 @@ previewing actions before running a real backup.
 
 changes.
 
-## How to Enable Dry Run Mode:
+### How to Enable Dry Run Mode:
 
-## Add this line inside your backup.config:
+#### Add this line inside your backup.config:
 
 ● DRY_RUN=true
 
@@ -548,7 +550,7 @@ Or run manually:
 
 ● ./backup.sh --dry-run
 
-## Example Dry Run Output:
+#### Example Dry Run Output:
 
 [DRY RUN] Backup process started...
 
@@ -561,7 +563,7 @@ Or run manually:
 [DRY RUN] DRY RUN MODE ACTIVE - No changes were made.
 
 
-### Backup Workflow:
+## Backup Workflow:
 
 #### The automated backup process follows:
 
