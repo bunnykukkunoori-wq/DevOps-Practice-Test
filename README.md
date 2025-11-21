@@ -1,6 +1,6 @@
 # Automated Backup System
 
-Basic backup automation script.
+● The Automated Backup File System is a simple tool that automatically creates backups of your important files and folders. It saves each backup with the date and time, so you always know when it was made. The system also removes old backups after a certain number of days to keep your storage clean.
 
 # What You Will Build
 
@@ -8,7 +8,7 @@ Basic backup automation script.
 
 logs, and clean up old backups without requiring manual intervention.
 
-### A Complete Automated Backup Script
+# A Complete Automated Backup Script
 
 ## A Bash script (backup.sh) that:
 
@@ -40,9 +40,10 @@ logs, and clean up old backups without requiring manual intervention.
 
 ● A proper folder structure that stores all backups in:
 
+```
 backups/
 └── backup-YYYY-MM-DD-HHMM.tar.gz
-
+```
 
 Each backup is clearly named and easy to restore.
 
@@ -92,27 +93,7 @@ It allows you to:
 * Manage and delete old backups intelligently
 * Configure everything through a simple config file
 * Test behavior safely with **dry run mode**
-
-Think of it as a smarter “copy and paste” that also cleans up after itself!
-
----
-
-##  Features
-
-● Create timestamped compressed backups.
- 
-● Verify backup integrity (checksum validation).
- 
-● Automatically delete old backups based on retention rules.
- 
-● Configurable backup destination and exclusions.
- 
-● Lock mechanism to prevent multiple simultaneous runs.
- 
-● Dry-run mode (safe simulation).
- 
-● Simple configuration via `backup.config`.
-
+* 
 # A. What Your Script Must Do:
 
 ● Load Configuration.
@@ -654,6 +635,23 @@ Or run manually:
 * Add compression-level configuration.
 
 ---
+
+##  Features
+
+● Create timestamped compressed backups.
+ 
+● Verify backup integrity (checksum validation).
+ 
+● Automatically delete old backups based on retention rules.
+ 
+● Configurable backup destination and exclusions.
+ 
+● Lock mechanism to prevent multiple simultaneous runs.
+ 
+● Dry-run mode (safe simulation).
+ 
+● Simple configuration via `backup.config`.
+
 
 ##  Example Log Output Screenshot:
 
