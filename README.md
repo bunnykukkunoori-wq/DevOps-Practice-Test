@@ -22,7 +22,7 @@ logs, and clean up old backups without requiring manual intervention.
 
 ● Supports a retention policy for old backups.
 
-### A Configurable Backup System
+### A Configurable Backup System:
 
 ● A dedicated configuration file (backup.config) where you can customize:
 
@@ -36,7 +36,7 @@ logs, and clean up old backups without requiring manual intervention.
 
 ● Optional dry-run mode.
 
-### Organized Backup Storage Structure
+### Organized Backup Storage Structure:
 
 ● A proper folder structure that stores all backups in:
 
@@ -47,7 +47,7 @@ backups/
 
 Each backup is clearly named and easy to restore.
 
-### Logging System
+### Logging System:
 
 ● A detailed logging mechanism that generates:
 
@@ -59,7 +59,7 @@ logs/
 
 These logs help track backup history, troubleshoot issues, and verify success.
 
-### Retention Cleanup System
+### Retention Cleanup System:
 
 ● A cleanup mechanism that:
 
@@ -71,7 +71,7 @@ These logs help track backup history, troubleshoot issues, and verify success.
 
 ● This prevents unnecessary storage usage.
 
-### A Safe Dry Run Mode
+### A Safe Dry Run Mode:
 
 ● A simulation mode (--dry-run) that shows everything the script would do 
 
@@ -79,7 +79,7 @@ without making changes.
 
 ● Perfect for testing configuration and verifying paths.
 
- ### Cron Job–Ready Automation
+ ### Cron Job–Ready Automation:
 
 ● A backup process that can be scheduled automatically using:
 
